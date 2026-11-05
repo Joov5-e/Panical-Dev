@@ -347,7 +347,6 @@ function atualizarFicha(receita) {
       formatarQuantidade(quantidade),
       ingrediente.unidade || "g",
       moeda.format(custoIngrediente),
-      "",
     ].forEach((valor) => {
       const celula = document.createElement("div");
       celula.textContent = valor;
