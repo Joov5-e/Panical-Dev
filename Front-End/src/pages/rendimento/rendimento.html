@@ -6,12 +6,19 @@
 
     <link rel="stylesheet" href="rendimento-layout.css" />
     <link rel="stylesheet" href="rendimento.css" />
+    <link rel="stylesheet" href="../../styles/layout/responsive.css" />
 
     <title>Rendimento | PaniCale</title>
   </head>
 
   <body>
-    <button id="btn-menu">
+    <button
+      id="btn-menu"
+      type="button"
+      aria-label="Abrir navegação"
+      aria-expanded="false"
+      aria-controls="sidebar"
+    >
       <span>☰</span>
     </button>
 
@@ -53,7 +60,13 @@
       </section>
     </div>
 
-    <header class="Dash_lateral" id="sidebar">
+    <header
+      class="Dash_lateral"
+      id="sidebar"
+      aria-label="Navegação principal"
+      aria-hidden="true"
+      inert
+    >
       <article class="logo">
         <img src="../../assets/images/logo-pan.png" alt="Logo-Pan" />
         <p>PaniCale</p>
@@ -187,5 +200,6 @@
     </main>
 
     <script src="rendimento.js" defer></script>
+    <script src="../../scripts/layout/navigation.js" defer></script>
   </body>
 </html>

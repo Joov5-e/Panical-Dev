@@ -425,11 +425,126 @@ span {
 
 @media (max-width: 516px) {
   .home {
-    overflow: hidden;
+    overflow-x: hidden;
   }
 
   .home-cards {
     gap: 1rem;
+  }
+
+  @media (max-width: 670px) {
+    .home {
+      min-height: 100vh;
+      min-height: 100svh;
+      padding: 0 16px 24px;
+      background-image:
+        linear-gradient(rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.64)),
+        url(../assets/images/paoTelaInicia.png);
+      background-position: center;
+      background-size: cover;
+    }
+
+    .home-logo {
+      margin: 16px auto 0;
+    }
+
+    .home-logo img {
+      width: clamp(112px, 34vw, 150px);
+    }
+
+    .home-container {
+      width: 100%;
+      margin: clamp(24px, 6vh, 48px) auto 0;
+      gap: 20px;
+    }
+
+    .home-descript {
+      width: 100%;
+    }
+
+    .home-descript h2,
+    .home-descript h2 span {
+      font-size: clamp(1.75rem, 7.5vw, 2.45rem);
+      line-height: 1.2;
+    }
+
+    .home-descript h2 {
+      margin-bottom: 12px;
+    }
+
+    .home-descript br {
+      display: none;
+    }
+
+    .home-descript p:first-of-type {
+      margin-bottom: 14px;
+      font-size: clamp(0.72rem, 3.2vw, 0.9rem);
+      line-height: 1.4;
+    }
+
+    .home-descript p:nth-of-type(2) {
+      max-width: 34rem;
+      margin: 0 auto;
+      font-size: clamp(0.9rem, 3.8vw, 1rem);
+      line-height: 1.5;
+    }
+
+    .home-cards {
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(2, minmax(0, 9.5rem));
+      justify-content: center;
+      gap: 12px;
+      white-space: normal;
+    }
+
+    .home-cards > .card {
+      width: 100% !important;
+      min-height: 11.5rem;
+      height: auto !important;
+    }
+
+    .home-cards > .card > a {
+      display: block;
+      height: 100%;
+    }
+
+    .home-cards img {
+      display: block;
+      width: 56px;
+      height: 56px !important;
+      margin: 8px auto 0;
+      padding: 0 !important;
+      object-fit: contain;
+    }
+
+    .home-cards .card-body {
+      padding: 10px;
+      text-align: center;
+    }
+
+    .home-cards h5 {
+      font-size: clamp(0.8rem, 3.5vw, 0.9rem);
+    }
+
+    .home-cards p {
+      font-size: clamp(0.72rem, 3.2vw, 0.82rem);
+      line-height: 1.4;
+    }
+
+    .home-cards p br {
+      display: none;
+    }
+
+    .home-info {
+      width: min(18rem, 100%);
+      margin: 4px auto 0;
+    }
+
+    .home-info a {
+      padding: 0 1.4rem;
+      font-size: clamp(1rem, 4.5vw, 1.2rem);
+    }
   }
 }
 

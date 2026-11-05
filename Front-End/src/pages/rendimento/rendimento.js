@@ -1,29 +1,3 @@
-const sidebar = document.getElementById("sidebar");
-const btn = document.getElementById("btn-menu");
-const colunaLateral = document.querySelector(".coluna_lateral");
-const overlay = document.getElementById("overlay");
-
-if (btn && sidebar && colunaLateral && overlay) {
-  btn.addEventListener("click", () => {
-    const abrindo = !sidebar.classList.contains("aberto");
-
-    // Alterna o estado de ambos
-    sidebar.classList.toggle("aberto"); // Abre/fecha o menu grande
-    colunaLateral.classList.toggle("oculta"); // Esconde/mostra a barra de ícones
-    btn.classList.toggle("menu-aberto");
-    overlay.classList.toggle("ativo");
-
-    btn.setAttribute("aria-expanded", abrindo);
-  });
-}
-
-const paginaAtual = window.location.pathname.split("/").pop();
-document.querySelectorAll(".auth-link").forEach((link) => {
-  if (link.dataset.page === paginaAtual) {
-    link.classList.add("ativo");
-  }
-});
-
 const listaReceitas = document.querySelector(".lista-receitas");
 
 if (listaReceitas) {
