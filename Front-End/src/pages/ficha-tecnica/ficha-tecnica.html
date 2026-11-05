@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ficha Técnica</title>
+    <link
+      rel="stylesheet"
+      href="../../styles/layout/dashboard.css"
+    />
+    <link rel="stylesheet" href="ficha-tecnica.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+
+  <body>
+    <button
+      id="btn-menu"
+      type="button"
+      aria-label="Abrir navegação"
+      aria-expanded="false"
+      aria-controls="sidebar"
+    >
+      <span aria-hidden="true">☰</span>
+    </button>
+
+    <div class="coluna_lateral">
+      <ul>
+        <li>
+          <a href="../cadastro-receitas/cadastro-receitas.html"
+            ><img
+              src="../../assets/icons/navigation/receita.svg"
+              alt="Receitas"
+          /></a>
+        </li>
+        <li>
+          <a href="ficha-tecnica.html" aria-current="page"
+            ><img
+              src="../../assets/icons/navigation/formulacao-da-massa.svg"
+              alt="Ficha Técnica"
+          /></a>
+        </li>
+        <li>
+          <a
+            href="../precificacao/precificacao.html"
+            ><img
+              src="../../assets/icons/navigation/precificacao.svg"
+              alt="Precificação"
+          /></a>
+        </li>
+        <li>
+          <a
+            href="../catalogo/catalogo.html"
+            ><img
+              src="../../assets/icons/navigation/catalogo.svg"
+              alt="Catálogo"
+          /></a>
+        </li>
+      </ul>
+      <section class="menu-sair menu-sair-coluna">
+        <hr />
+        <a href="../../../../index.html"
+          ><img src="../../assets/icons/navigation/sair.svg" alt="Início"
+        /></a>
+      </section>
+    </div>
+
+    <header
+      class="Dash_lateral"
+      id="sidebar"
+      aria-label="Navegação principal"
+      aria-hidden="true"
+      inert
+    >
+      <article class="logo">
+        <img src="../../assets/images/logo-pan.png" alt="Logo-Pan" />
+        <p>PaniCale</p>
+      </article>
+      <hr class="linha-divisora" />
+      <nav class="Dash_menu" aria-label="Navegação principal">
+        <ul>
+          <li>
+            <a href="../cadastro-receitas/cadastro-receitas.html"
+              ><img
+                src="../../assets/icons/navigation/receita.svg"
+                alt=""
+              /><span>Receita</span></a
+            >
+          </li>
+          <li>
+            <a href="ficha-tecnica.html" aria-current="page"
+              ><img
+                src="../../assets/icons/navigation/formulacao-da-massa.svg"
+                alt=""
+              /><span>Ficha Técnica</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="../precificacao/precificacao.html"
+              ><img
+                src="../../assets/icons/navigation/precificacao.svg"
+                alt=""
+              /><span>Precificação</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="../catalogo/catalogo.html"
+              ><img
+                src="../../assets/icons/navigation/catalogo.svg"
+                alt=""
+              /><span>Catálogo</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+      <section class="menu-sair">
+        <hr />
+        <a href="../../../../index.html"
+          ><img src="../../assets/icons/navigation/sair.svg" alt="" /><span
+            >Sair</span
+          ></a
+        >
+      </section>
+    </header>
+
+    <div class="app">
+      <div class="ficha">
+        <div class="header">
+          <div class="header-title">
+            <h1>FICHA TÉCNICA</h1>
+            <span>INFORMAÇÕES DO PRODUTO</span>
+          </div>
+
+          <div class="header-action">
+            <label for="ficha-receita-seletor">Receita</label>
+            <select
+              id="ficha-receita-seletor"
+              aria-label="Selecionar receita para a ficha técnica"
+            ></select>
+          </div>
+        </div>
+
+        <div class="content">
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="../../assets/images/paoTelaInicia.png"
+                alt="Imagem do Produto"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="info-item">
+                <span class="receipt-header">NOME DO PRODUTO</span><br />
+                <span id="receipt-name">Selecione uma receita</span>
+              </div>
+
+              <div class="info-item">
+                <span class="label">CÓDIGO DO PRODUTO</span>
+                <span class="value" id="receipt-code">—</span>
+              </div>
+
+              <div class="info-item">
+                <span class="label">CATEGORIA</span>
+                <span class="value" id="receipt-category">—</span>
+              </div>
+
+              <div class="info-item description">
+                <span class="label">DESCRIÇÃO</span>
+                <span class="value" id="receipt-description"
+                  >Os dados da receita aparecerão aqui.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="main-panel">
+            <div class="ingredients">
+              <div class="section-title">
+                <h2>INGREDIENTES</h2>
+              </div>
+
+              <div class="ingredients-body" id="ficha-ingredientes">
+                <div class="ingredient-header">
+                  <div>INGREDIENTE</div>
+                  <div>QUANTIDADE</div>
+                  <div>UNIDADE</div>
+                  <div>CUSTO TOTAL</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="production">
+              <div class="section-title">
+                <h2>INFORMAÇÕES DA PRODUÇÃO</h2>
+              </div>
+
+              <div class="production-cards">
+                <div class="production-card">
+                  <span class="card-label">RENDIMENTO</span>
+                  <strong id="ficha-rendimento">—</strong>
+                </div>
+
+                <div class="production-card">
+                  <span class="card-label">PESO POR UNIDADE</span>
+                  <strong id="ficha-peso-unidade">—</strong>
+                </div>
+
+                <div class="production-card">
+                  <span class="card-label">TEMPO DE PREPARO</span>
+                  <strong id="ficha-tempo-preparo">Não informado</strong>
+                </div>
+
+                <div class="production-card">
+                  <span class="card-label">CUSTO TOTAL</span>
+                  <strong id="ficha-custo-total">—</strong>
+                </div>
+
+                <div class="production-card">
+                  <span class="card-label">CUSTO POR UNIDADE</span>
+                  <strong id="ficha-custo-unidade">—</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="observations">
+              <span class="label">OBSERVAÇÕES</span>
+
+              <p id="ficha-observacoes">
+                Selecione uma receita para ver o modo de preparo.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <button class="back-button">VOLTAR</button>
+
+          <button class="save-button" id="salvar-ficha" type="button">
+            SALVAR FICHA TÉCNICA
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="overlay-menu" id="overlay"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="ficha-tecnica.js"></script>
+    <script src="../../scripts/layout/navigation.js"></script>
+  </body>
+</html>

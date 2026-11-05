@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de receita</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Rufina:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../styles/layout/dashboard.css"
+    />
+    <link rel="stylesheet" href="cadastro-receitas.css" />
+    <script src="cadastro-receitas.js" defer></script>
+    <script
+      src="../../scripts/layout/navigation.js"
+      defer
+    ></script>
+  </head>
+
+  <body>
+    <button
+      id="btn-menu"
+      type="button"
+      aria-label="Abrir navegação"
+      aria-expanded="false"
+      aria-controls="sidebar"
+    >
+      <span>☰</span>
+    </button>
+
+    <div class="coluna_lateral">
+      <ul>
+        <li>
+          <a href="cadastro-receitas.html" aria-label="Receita" aria-current="page">
+            <img src="../../assets/icons/navigation/receita.svg" alt="" />
+          </a>
+        </li>
+        <li>
+          <a href="../ficha-tecnica/ficha-tecnica.html">
+            <img
+              src="../../assets/icons/navigation/formulacao-da-massa.svg"
+              alt=""
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="../precificacao/precificacao.html"
+          >
+            <img
+              src="../../assets/icons/navigation/precificacao.svg"
+              alt=""
+            />
+          </a>
+        </li>
+        <li>
+          <a href="../catalogo/catalogo.html">
+            <img src="../../assets/icons/navigation/catalogo.svg" alt="" />
+          </a>
+        </li>
+      </ul>
+
+      <section class="menu-sair menu-sair-coluna">
+        <hr />
+        <a href="../../../../index.html">
+          <img src="../../assets/icons/navigation/sair.svg" alt="" />
+        </a>
+      </section>
+    </div>
+
+    <header class="Dash_lateral" id="sidebar">
+      <article class="logo">
+        <img src="../../assets/images/logo-pan.png" alt="Logo-Pan" />
+        <p>PaniCalc</p>
+      </article>
+
+      <hr class="linha-divisora" />
+
+      <nav class="Dash_menu" aria-label="Navegação principal">
+        <ul>
+          <li>
+            <a href="cadastro-receitas.html" aria-current="page">
+              <img src="../../assets/icons/navigation/receita.svg" alt="" />
+              <span>Receita</span>
+            </a>
+          </li>
+          <li>
+            <a href="../ficha-tecnica/ficha-tecnica.html">
+              <img
+                src="../../assets/icons/navigation/formulacao-da-massa.svg"
+                alt=""
+              />
+              <span>Ficha Técnica</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="../precificacao/precificacao.html"
+            >
+              <img
+                src="../../assets/icons/navigation/precificacao.svg"
+                alt=""
+              />
+              <span>Precificação</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="../catalogo/catalogo.html"
+            >
+              <img
+                src="../../assets/icons/navigation/catalogo.svg"
+                alt=""
+              />
+              <span>Catálogo</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <section class="menu-sair">
+        <hr />
+        <a href="../../../../index.html">
+          <img src="../../assets/icons/navigation/sair.svg" alt="" />
+          <span>Sair</span>
+        </a>
+      </section>
+    </header>
+
+    <div class="overlay-menu" id="overlay"></div>
+
+    <div class="hero">
+      <div class="header">
+        <div class="header-text">
+          <img src="../../assets/images/pao%201.png" class="header-img" alt="" />
+          <div class="header-text-content">
+            <h1>Nova receita</h1>
+            <span>Cadastre ingredientes, produção e custos da sua receita.</span>
+          </div>
+        </div>
+
+        <div class="exit-button">
+          <a href="../../../../index.html">
+            <button>
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <div class="form-content">
+        <section class="form-section">
+          <div class="form-receita">
+            <form action="#">
+              <span class="infoHeader">INFORMAÇÕES BÁSICAS:</span>
+              <div class="form-receita-inputs">
+                <label for="receitaNome">NOME DA RECEITA:</label>
+                <input
+                  type="text"
+                  name="receitaNome"
+                  id="receitaNome"
+                  placeholder="Pão Francês"
+                  required
+                />
+
+                <label for="categoriaReceita">CATEGORIA:</label>
+                <select name="categoriaReceita" id="categoriaReceita" required>
+                  <option value="">Seleciona uma categoria</option>
+                  <option value="massaSalgada">Massa salgada</option>
+                  <option value="massaIntegral">Massa integral</option>
+                  <option value="massaDoce">Massa semi doce</option>
+                  <option value="sobremessa">Massa doce</option>
+                </select>
+
+                <label for="uniDesejadas">UNIDADES DESEJADAS / BASE:</label>
+                <input
+                  type="number"
+                  id="uniDesejadas"
+                  name="uniDesejadas"
+                  placeholder="Ex: 50 unidades"
+                  min="1"
+                  required
+                />
+
+                <label for="pesoPorPao">PESO DE CADA PÃO (g):</label>
+                <input
+                  type="number"
+                  id="pesoPorPao"
+                  name="pesoPorPao"
+                  placeholder="Ex: 50"
+                  min="1"
+                  step="any"
+                  required
+                />
+
+                <label for="tempoPreparo">TEMPO DE PREPARO (MINUTOS):</label>
+                <input
+                  type="number"
+                  id="tempoPreparo"
+                  name="tempoPreparo"
+                  placeholder="Ex: 120 (2 horas)"
+                  min="1"
+                  step="1"
+                  inputmode="numeric"
+                />
+                <small class="field-hint">Campo opcional. Informe o tempo total estimado.</small>
+
+                <label for="pesoBaseFarinha">
+                  PESO DA FARINHA DE TRIGO (1000g = 1kg):
+                </label>
+                <input
+                  type="number"
+                  id="pesoBaseFarinha"
+                  value="1000"
+                  min="100"
+                  step="100"
+                  placeholder="Ex: 1000"
+                  required
+                />
+
+                <p class="field-label">FOTO DA RECEITA:</p>
+                <label class="image-upload" for="imgReceita">
+                  <img id="imagePreview" alt="Prévia da receita" hidden />
+                  <span class="upload-placeholder">
+                    <i class="fa-regular fa-file"></i>Clique para adicionar<br />
+                    uma foto
+                  </span>
+                </label>
+                <input
+                  type="file"
+                  id="imgReceita"
+                  name="imgReceita"
+                  accept="image/png, image/jpeg"
+                  class="visually-hidden"
+                />
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <div class="table-content">
+          <section class="table-box">
+            <div class="table-container">
+              <h3>INGREDIENTES</h3>
+              <div id="tablePlace"></div>
+              <button type="button" class="addIngred">
+                <i class="fa-solid fa-plus"></i> ADICIONAR INGREDIENTE
+              </button>
+            </div>
+          </section>
+
+          <div class="table-container-2">
+            <div class="infoReceitas">
+              <h3>INFORMAÇÕES DA RECEITA</h3>
+
+              <div class="maisInfoReceitas">
+                <div class="infoBox">
+                  <label for="valorTotal">
+                    <i class="fa-solid fa-dollar-sign infoIcons"></i>
+                  </label>
+                  <span id="valorTotal" class="valueIB"></span>
+                  <span class="descInfoBox">CUSTO TOTAL</span>
+                </div>
+
+                <div class="infoBox">
+                  <label for="quantidadeProduzida">
+                    <i class="fa-solid fa-chart-column infoIcons"></i>
+                  </label>
+                  <span id="quantidadeProduzida" class="valueIB"></span>
+                  <span class="descInfoBox">RENDIMENTO</span>
+                </div>
+
+                <div class="infoBox">
+                  <label for="pesoMassaCrua">
+                    <i class="fa-solid fa-scale-balanced infoIcons"></i>
+                  </label>
+                  <span id="pesoMassaCrua" class="valueIB"></span>
+                  <span class="descInfoBox">PESO CRU</span>
+                </div>
+
+                <div class="infoBox">
+                  <label for="pesoMassaTotal">
+                    <i class="fa-solid fa-scale-balanced infoIcons"></i>
+                  </label>
+                  <span id="pesoMassaTotal" class="valueIB"></span>
+                  <span class="descInfoBox">PESO ASSADO ESTIMADO</span>
+                </div>
+              </div>
+              <p class="recipe-calculation-hint">
+                O custo total soma os ingredientes cadastrados.
+                O rendimento é calculado pelo peso total da massa dividido pelo peso de cada pão.
+                O peso assado é uma estimativa com redução de 2%. Para estimar o peso, kg é convertido para g e cada ml é considerado aproximadamente igual a 1 g.
+              </p>
+
+              <div class="mp-container">
+                <h4>MODO DE PREPARO</h4>
+                <textarea
+                  name="modoPreparo"
+                  id="modoPreparo"
+                  placeholder="Descreva o modo de preparo da receita"
+                  required
+                ></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br />
+      <div class="saveButton" id="saveRecipe">
+        <button type="button">Salvar receita</button>
+      </div>
+      <p id="recipe-save-status" class="recipe-save-status" role="status" aria-live="polite"></p>
+    </div>
+
+    <section class="modal hidden">
+      <div class="overlay hidden">
+        <div class="modal-body">
+          <div class="modal-text">
+            <button class="close-modal">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3>Adicionando ingredientes</h3>
+
+            <div class="addingIngred">
+              <div class="modal-form-grid">
+                <div class="items-grid">
+                  <div class="input-group">
+                    <label for="nomeIngred">Selecione o ingrediente:</label>
+                    <select name="nomeIngred" id="nomeIngred">
+                      <option value="">Clique aqui para selecionar</option>
+                      <option value="farinha">Farinha de trigo</option>
+                      <option value="fariIntegral">Farinha de trigo integral</option>
+                      <option value="acucar">Açúcar</option>
+                      <option value="fermentoFresco">
+                        Fermento Biológico Fresco
+                      </option>
+                      <option value="fermentoSeco">
+                        Fermento Biológico Seco
+                      </option>
+                      <option value="sal">Sal</option>
+                      <option value="claraOvo">Ovo</option>
+                      <option value="gemaOvo">Ovos (gema)</option>
+                      <option value="essencia">Essência</option>
+                      <option value="corante">Corante</option>
+                      <option value="leiteLiq">Leite Líquido</option>
+                      <option value="leitePo">Leite em Pó</option>
+                      <option value="agua">Água</option>
+                      <option value="gordura">Gordura</option>
+                      <option value="aditivoPo">Aditivo em Pó</option>
+                      <option value="aditivoLiqui">Aditivo Líquido</option>
+                      <option value="aditivoPasta">Aditivo em Pasta</option>
+                    </select>
+                  </div>
+
+                  <div class="input-group">
+                    <label for="quantIngred">Quantidade usada:</label>
+                    <div class="ingredient-quantity-input">
+                      <input
+                        type="number"
+                        name="quantIngred"
+                        id="quantIngred"
+                        placeholder="Ex: 250"
+                        step="any"
+                        min="0"
+                        inputmode="decimal"
+                        disabled
+                      />
+                      <select id="unidadeIngred" aria-label="Unidade da quantidade usada">
+                        <option value="g">g</option>
+                        <option value="kg">kg</option>
+                        <option value="ml">ml</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="items-grid-2">
+                  <div class="input-group">
+                    <label for="custoIngrediente">Custo da quantidade usada (R$)</label>
+                    <input
+                      type="number"
+                      id="custoIngrediente"
+                      name="custoIngrediente"
+                      min="0"
+                      step="any"
+                      inputmode="decimal"
+                      placeholder="Ex: 2,50"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal-buttons">
+                <button type="button" class="save-ingred">
+                  <i class="fa-solid fa-check"></i> Salvar ingrediente
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="edit-data">
+      <div class="overlay-edit hidden">
+        <div class="modal-edit-body hidden">
+          <button
+            type="button"
+            class="close-edit-modal close-modal"
+            onclick="closeEditModal()"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+
+          <h3 class="edit-modal-header">Editar Ingrediente</h3>
+          <div class="addingIngred edit-modal-text" id="editingIngred">
+            <div class="edit-items-grid-1">
+              <label for="editNomeIngred">Ingrediente:</label>
+              <select id="editNomeIngred">
+                <option value="">Selecione um ingrediente</option>
+                <option value="farinha">Farinha de trigo</option>
+                <option value="fariIntegral">Farinha de trigo integral</option>
+                <option value="acucar">Açúcar</option>
+                <option value="fermentoFresco">
+                  Fermento Biológico Fresco
+                </option>
+                <option value="fermentoSeco">Fermento Biológico Seco</option>
+                <option value="sal">Sal</option>
+                <option value="claraOvo">Ovos</option>
+                <option value="gemaOvo">Ovos (gema)</option>
+                <option value="leiteLiq">Leite Líquido</option>
+                <option value="leitePo">Leite em Pó</option>
+                <option value="agua">Água</option>
+                <option value="gordura">Gordura</option>
+                <option value="aditivoPo">Aditivo em Pó</option>
+                <option value="aditivoLiqui">Aditivo em Líquido</option>
+                <option value="aditivoPasta">Aditivo em Pasta</option>
+              </select>
+
+              <label for="editQuant">Quantidade usada:</label>
+              <div class="ingredient-quantity-input">
+                <input
+                  type="number"
+                  name="editQuant"
+                  id="editQuant"
+                  min="0"
+                  step="any"
+                  inputmode="decimal"
+                />
+                <select id="editUnidade" aria-label="Unidade da quantidade usada">
+                  <option value="g">g</option>
+                  <option value="kg">kg</option>
+                  <option value="ml">ml</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="edit-items-grid-2">
+              <label for="editPrecoIngred">Custo da quantidade usada (R$):</label>
+              <input
+                type="number"
+                name="editPrecoIngred"
+                id="editPrecoIngred"
+                min="0"
+                step="any"
+                inputmode="decimal"
+                placeholder="Ex: 2,50"
+              />
+
+              <label for="editTipoForno">Tipo de Forno:</label>
+              <select id="editTipoForno">
+                <option value="lastro">Forno lastro</option>
+                <option value="turbo">Forno turbo</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="modal-buttons">
+            <button type="button" class="save-edit-ingred">
+              <i class="fa-solid fa-check"></i> Salvar Alterações
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
